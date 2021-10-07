@@ -16,7 +16,7 @@ st.title("Distribución de Clínicas - Sanitas")
 base = pd.read_excel("RED.xlsx")
 st.sidebar.write("PARAMETROS")
 option = st.sidebar.selectbox(
-     'Selecciones su plan',
+     'Seleccione su plan',
      ('Base PEAS', 'Base Esencial', 'Base Plus',"ADIC 1","ADIC 2"),4)
 
 base1 = base[base[option]=="a"]
@@ -26,7 +26,7 @@ filtro1 = list(base1["COBERTURA"].unique())
 filtro1.insert(0,"TODOS")
 
 
-option1 = st.sidebar.selectbox('Selecciones cobertura',filtro1,1)
+option1 = st.sidebar.selectbox('Seleccione cobertura',filtro1,1)
 
 
 
@@ -47,7 +47,7 @@ base1 = base1[mask]
 base1.rename(columns={'Latitude':'lat','Longitude':'lon'},inplace=True)
 
 st.sidebar.write("----")
-option3 = st.sidebar.selectbox('Selecciones mapa',['basic', 'streets', 'outdoors'],0)
+option3 = st.sidebar.selectbox('Seleccione mapa',['basic', 'streets', 'outdoors'],0)
 option4 =st.sidebar.slider("Tamaño", 7,15,9)
 px.set_mapbox_access_token("pk.eyJ1IjoiZWZlcm5hbmRlejk1IiwiYSI6ImNrdWhkMmYyODJkMnEyb3Fqdm9yODJxaHIifQ.n-2MSsIfHeZscJEp4LpXwA")
 
